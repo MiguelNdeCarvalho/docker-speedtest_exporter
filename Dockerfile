@@ -17,4 +17,4 @@ EXPOSE 9112
 
 CMD ["./app/speedtest_exporter"]
 
-HEALTHCHECK --timeout=10s CMD curl --silent --fail http://127.0.0.1:9112/metrics
+HEALTHCHECK --timeout=10s CMD curl --silent --fail http://127.0.0.1:9112/
