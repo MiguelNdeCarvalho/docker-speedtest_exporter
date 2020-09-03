@@ -1,6 +1,7 @@
 #!/bin/sh
 
 LAST_VERSION=`curl --silent "https://api.github.com/repos/nlamirault/speedtest_exporter/releases/latest" | grep -Po '"tag_name": "\K.*?(?=")'`
+LAST_VERSION="${LAST_VERSION:1}"
 DOWNLOAD_URL=`https://bintray.com/artifact/download/nlamirault/oss/speedtest_exporter-${LAST_VERSION}_linux_${ARCH}`
 
 mkdir /app
