@@ -1,7 +1,8 @@
-ARG ARCH=
-FROM $ARCH/alpine:3.12
+FROM alpine:3.12
 
 LABEL maintainer="MiguelNdeCarvalho <geral@miguelndecarvalho.pt>"
+
+ENV ARCH=amd64
 
 RUN apk upgrade --no-cache \
  && apk add --no-cache \
