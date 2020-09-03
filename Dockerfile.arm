@@ -1,0 +1,20 @@
+FROM arm32v7/ubuntu:focal
+
+LABEL maintainer="MiguelNdeCarvalho <geral@miguelndecarvalho.pt>"
+
+ENV ARCH=arm
+
+COPY rootfs .
+
+RUN apt-get update && \
+    apt-get install -y wget \
+    tzdata \
+    curl && \
+    ./setup.sh && \
+    rm -rf ./setup.sh
+
+EXPOSE 9112
+
+CMD ["./app/speedtest_exporter"]
+
+HEALTHCHECK --timeout=10s CMD curl --silent --fail http://127.0.0.1:9112/
