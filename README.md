@@ -19,4 +19,4 @@ docker run -d \
 Then just acess the page `http://localhost:9112/` and you will have the page.
 
 ## Thanks
-[Nicolas Lamirault](https://github.com/nlamirault)(for making the exporter.
+[Nicolas Lamirault](https://github.com/nlamirault)(for making the exporter).
